@@ -3,7 +3,7 @@
 This web application allows you to view a logo on a 3D t-shirt, either as a small logo or a full t-shirt wrap. It is built using Express.js for the back-end and Vite React for the front-end.
 
 ## Live Demo
-You can try out the live demo of this application at [https://3dtshirt.alexandrosgkougkoulis.tech/](http://www.testapp.com). Please note that the demo may be subject to changes or downtime due to maintenance or updates.
+You can try out the live demo of this application at [LIVE DEMO](https://3dtshirt.alexandrosgkougkoulis.tech/). Please note that the demo may be subject to changes or downtime due to maintenance or updates.
 
 ## Features
 - View a logo on a 3D t-shirt in real-time.
