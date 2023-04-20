@@ -9,9 +9,18 @@ import {
   headTextAnimation,
   slideAnimation,
 } from "../config/motion";
+import { useLayoutEffect, useState } from "react";
 
 const Home = () => {
   const snap = useSnapshot(state);
+  const [disableButton, setDisableButton] = useState(true);
+
+  useLayoutEffect(() => {
+    setInterval(() => {
+      setDisableButton(false);
+    }, 2000);
+    return () => clearInterval();
+  }, []);
   return (
     <AnimatePresence>
       {snap.intro && (
@@ -40,6 +49,7 @@ const Home = () => {
                 style.
               </p>
               <CustomButton
+                isDisabled={disableButton}
                 type="filled"
                 title="Customize It"
                 handleClick={() => (state.intro = false)}
