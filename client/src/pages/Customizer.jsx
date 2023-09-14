@@ -30,6 +30,24 @@ const Customizer = () => {
     stylishShirt: false,
   });
 
+  const tabContentRef = useRef(null);
+  const handleClickOutside = (event) => {
+    if (
+      tabContentRef.current &&
+      !tabContentRef.current.contains(event.target)
+    ) {
+      // Set any state to close the tab content
+      setActiveEditorTab("");
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Clean up the listener when the component is unmounted
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   // show tab content depending on the activeTab
   const generateTabContent = () => {
     switch (activeEditorTab) {
